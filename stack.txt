@@ -1,0 +1,138 @@
+Backend API – Laravel 11 (DDD + REST + GraphQL)
+Dominios principales:
+
+Users → autenticación, roles (admin, vendedor, cliente)
+Stores → configuración de tienda, branding, URLs personalizadas
+Products → catálogo, categorías, variantes
+Orders → gestión de pedidos y estados (pendiente, enviado, completado)
+Suppliers → integraciones con APIs externas de dropshipping
+Payments → integración con Stripe/PayPal
+Notifications → envío de correos, WebSockets
+Analytics → métricas y reportes de ventas
+
+-----------------
+
+Frontend – Nuxt 3 + TypeScript
+
+UI responsiva con TailwindCSS + shadcn/ui.
+SSR/SPA híbrido: SEO-friendly para productos y catálogos.
+
+Rutas principales:
+/ – landing page con tiendas destacadas.
+/shop/:storeSlug – tienda de un vendedor.
+/product/:id – detalle del producto.
+/cart – carrito de compras.
+/dashboard – gestión de pedidos, productos, proveedores.
+
+Autenticación JWT + Refresh tokens
+Carrito persistente con localStorage + API sync
+Integración con pasarelas de pago (Stripe, PayPal)
+Testing: Cypress (E2E) + Vitest (unit tests)
+
+-----------------
+
+Tecnologías:
+
+Laravel Sanctum / Passport para auth
+GraphQL con Lighthouse
+Jobs y Queues con Redis
+Eventos y escuchas (event-driven)
+Logging con Monolog (JSON + Loki)
+Testing: Pest (unit + integration)
+
+-----------------
+
+Microservicios complementarios
+
+Notificaciones (Node.js + TS)
+WebSocket + Redis pub/sub
+Envío de correos (SES / SendGrid)
+Push notifications (Firebase)
+🔹 Integrador de Proveedores (Python FastAPI)
+Se conecta con APIs de AliExpress, Shopify u otros dropshippers
+Sincroniza productos y precios
+Corre con Celery + Redis para tareas programadas
+
+
+-----------------
+
+Bases de Datos
+
+SQL (PostgreSQL) → usuarios, pedidos, productos, tiendas
+MongoDB → logs, historial de sincronización, auditoría
+Redis → caché, colas de background jobs
+
+-----------------
+
+Infraestructura / DevOps
+
+Docker Compose para desarrollo local
+Kubernetes (EKS o GKE) en producción
+Terraform para IaC (DBs, bucket S3, EKS)
+GitHub Actions / GitLab CI → CI/CD con pipeline:
+Lint + Unit tests
+Build de Docker images
+Deploy a K8s con rolling updates
+S3 + CloudFront → almacenamiento y CDN
+Prometheus + Grafana → monitoreo
+Loki + Grafana → logs centralizados
+
+------------------
+
+Seguridad
+
+OWASP aplicado (XSS, CSRF, SQLi, Auth seguro)
+Tokens JWT firmados + refresh
+CORS dinámico (según tenant/tienda)
+Rate limiting con Redis
+Sanitización de input con DTOs (backend + frontend)
+
+------------------
+
+dropx/
+│
+├── frontend/ (Nuxt 3 + TS)
+│   ├── components/
+│   ├── pages/
+│   ├── composables/
+│   ├── tests/
+│
+├── backend-api/ (Laravel 11)
+│   ├── app/Domain/
+│   ├── app/Infrastructure/
+│   ├── app/Application/
+│   ├── routes/api.php
+│   ├── graphql/
+│   └── tests/
+│
+├── services/
+│   ├── notifications/ (Node + Redis)
+│   └── supplier-sync/ (Python + FastAPI)
+│
+├── docker/
+│   ├── Dockerfile.api
+│   ├── Dockerfile.front
+│   ├── docker-compose.yml
+│
+├── infra/
+│   ├── terraform/
+│   └── k8s/
+│
+└── docs/
+    ├── architecture.md
+    ├── api-spec.yaml
+    └── roadmap.md
+
+
+--------------
+
+Qué demuestra este proyecto
+Área	            Habilidad demostrada
+Frontend	        Nuxt 3, TypeScript, SSR, SEO, UI/UX
+Backend	            Laravel 11, GraphQL, DDD, REST APIs
+Integraciones	    Dropshipping APIs, Stripe/PayPal
+Infraestructura	    Docker, K8s, Terraform, CI/CD
+Microservicios	    Node.js, FastAPI, Redis, RabbitMQ
+Testing	            Unit + Integration + E2E
+Seguridad	        OWASP, Tokens, Rate limiting
+Escalabilidad	    Microservicios, Caching, Queues
