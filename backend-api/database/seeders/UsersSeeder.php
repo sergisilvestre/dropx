@@ -3,9 +3,7 @@
 namespace Database\Seeders;
 
 use App\Application\Users\UseCases\CreateUser;
-use App\Domain\Users\Entities\UserEntity;
-use App\Infrastructure\Persistence\Users\EloquentUserRepository;
-use GuzzleHttp\Promise\Create;
+use App\Infrastructure\Persistence\User\EloquentUserRepository;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;

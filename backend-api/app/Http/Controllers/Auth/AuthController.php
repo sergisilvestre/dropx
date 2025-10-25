@@ -10,6 +10,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
+    
     public function login(Request $request)
     {
         $user = UserEntity::where('email', $request->email)->first();

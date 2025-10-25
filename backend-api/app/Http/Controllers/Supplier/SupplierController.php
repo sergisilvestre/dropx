@@ -1,17 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Supplier;
 
-use App\Application\Users\UseCases\CreateUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Infrastructure\Persistence\User\EloquentUserRepository;
-
-class UserController extends Controller
+class SupplierController extends Controller
 {
-    private EloquentUserRepository $repository;
+    private EloquentSupplierRepository $repository;
 
-    public function __construct(EloquentUserRepository $repository, private CreateUser $createUser)
+    public function __construct(EloquentSupplierRepository $repository, private CreateSupplier $createSupplier)
     {
         $this->repository = $repository;
     }

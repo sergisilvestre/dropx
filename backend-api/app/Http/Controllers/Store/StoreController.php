@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Application\Users\UseCases\CreateUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Infrastructure\Persistence\User\EloquentUserRepository;
 
-class UserController extends Controller
+class StoreController extends Controller
 {
-    private EloquentUserRepository $repository;
+    private EloquentStoreRepository $repository;
 
-    public function __construct(EloquentUserRepository $repository, private CreateUser $createUser)
+    public function __construct(EloquentStoreRepository $repository, private CreateStore $createStore)
     {
         $this->repository = $repository;
     }
 
     public function index(){
-        
+
         $items = $this->repository->all();
         return response()->json($items);
     }

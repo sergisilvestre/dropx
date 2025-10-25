@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Domain\Users\Repositories\UserRepositoryInterface;
-use App\Infrastructure\Persistence\Users\EloquentUserRepository;
+use App\Infrastructure\Persistence\User\EloquentUserRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

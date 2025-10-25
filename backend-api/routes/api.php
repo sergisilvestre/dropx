@@ -16,4 +16,17 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     // user
     include 'apiRoutes/user.php';
+
+    // product
+    include 'apiRoutes/product.php';
+
+    // order
+    include 'apiRoutes/order.php';
+
+    // store
+    include 'apiRoutes/store.php';
+
+    // supplier
+    include 'apiRoutes/supplier.php';
+    
 });
