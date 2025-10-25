@@ -8,7 +8,12 @@ Route::post('login', [AuthController::class, 'login']);
 // Authenticated routes
 Route::group(['middleware' => 'auth:api'], function () {
 
-    // Include auth routes | Prefix: auth
+    // auth
     include 'apiRoutes/auth.php';
 
+    // roles
+    include 'apiRoutes/role.php';
+
+    // user
+    include 'apiRoutes/user.php';
 });
