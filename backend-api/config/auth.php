@@ -1,6 +1,6 @@
 <?php
 
-use App\Domain\Users\Entities\UserEntity;
+use App\Domain\User\Entities\UserEntity;
 
 return [
     'defaults'  => [

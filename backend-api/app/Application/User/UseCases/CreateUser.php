@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Application\Users\UseCases;
+namespace App\Application\User\UseCases;
 
-use App\Domain\Users\Repositories\UserRepositoryInterface;
+use App\Domain\User\Repositories\UserRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 
 class CreateUser

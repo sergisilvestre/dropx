@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Users\Entities;
+namespace App\Domain\User\Entities;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;

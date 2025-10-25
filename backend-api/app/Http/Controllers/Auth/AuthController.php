@@ -2,38 +2,36 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Domain\Users\Entities\UserEntity;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Tymon\JWTAuth\Facades\JWTAuth;
+use App\Infrastructure\Persistence\Auth\EloquentAuthRepository;
 
 class AuthController extends Controller
 {
-    
+    private EloquentAuthRepository $repository;
+
+    public function __construct(EloquentAuthRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function login(Request $request)
     {
-        $user = UserEntity::where('email', $request->email)->first();
-
-        if (!$user || !Hash::check($request->password, $user->password)) {
-            return response()->json(['error' => 'Invalid credentials'], 401);
-        }
-
-        $token = auth('api')->login($user);
+        
+        $token = $this->repository->login($request->only('email', 'password'));
 
         return response()->json([
-            'access_token'  => $token,
-            'token_type'    => 'bearer',
-            'expires_in'    => JWTAuth::factory()->getTTL() * 60
+            'message'   => 'Successfully logged in',
+            'data'      => $token
         ]);
     }
 
     public function logout()
     {
-        auth('api')->logout();
+      $this->repository->logout();
 
         return response()->json([
             'message' => 'Successfully logged out'
-        ]);
+        ]); 
     }
-}
+}   

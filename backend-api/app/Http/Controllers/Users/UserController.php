@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Application\Users\UseCases\CreateUser;
+use App\Application\User\UseCases\CreateUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Infrastructure\Persistence\User\EloquentUserRepository;
