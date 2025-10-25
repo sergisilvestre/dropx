@@ -1,0 +1,17 @@
+# Start the Laravel development server on port 80
+php artisan serve --port=80;
+
+# Run database migrations and seed the database
+php artisan migrate --seed;
+
+# Install and configure JWT authentication package
+composer require tymon/jwt-auth
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+php artisan jwt:secret
+
+
+# Clear and optimize the application configuration and routes
+php artisan config:clear;
+php artisan route:clear;
+php artisan cache:clear;
+php artisan optimize;

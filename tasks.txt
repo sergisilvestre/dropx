@@ -1,0 +1,9 @@
+Configura DB y auth.
+Crea Domain Entities y migraciones.
+Implementa Roles y Usuarios.
+Añade Stores y Products.
+Configura GraphQL y REST endpoints.
+Integra Redis + Jobs para notificaciones y sincronización.
+Añade pagos (Stripe/PayPal) y testing.
+
+
