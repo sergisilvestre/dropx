@@ -6,7 +6,7 @@
     </main>
 </template>
 <script>
-import Product from './Product.vue';
+import Product from '../views/Product/Product.vue';
 export default {
     components: {
         Product
