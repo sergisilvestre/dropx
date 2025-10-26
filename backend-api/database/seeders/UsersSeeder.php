@@ -29,6 +29,9 @@ class UsersSeeder extends Seeder
         ], $role);
 
         // Create a seller user
+
+        $role = Role::where('name', 'seller')->first();
+        
         $this->createUser([
             'name'      => "Seller User",
             'email'     => "seller@example.com",
