@@ -17,21 +17,26 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        
+
         $token = $this->repository->login($request->only('email', 'password'));
 
         return response()->json([
             'message'   => 'Successfully logged in',
-            'data'      => $token
+            'data'      => [
+                'token'     => $token['access_token'],
+                'id'        => auth('api')->user()->id,
+                'email'     => auth('api')->user()->email,
+                'name'      => auth('api')->user()->name,
+            ],
         ]);
     }
 
     public function logout()
     {
-      $this->repository->logout();
+        $this->repository->logout();
 
         return response()->json([
             'message' => 'Successfully logged out'
-        ]); 
+        ]);
     }
-}   
+}

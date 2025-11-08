@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Product;
 
+use App\Domain\Product\Entities\ProductEntity;
 use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
@@ -15,9 +16,8 @@ class ProductController extends Controller
 
     public function index(){
 
-        $response = file_get_contents('https://restful.export.api/products.json');
-        $products = json_decode($response, true);
+       $products = ProductEntity::paginate(12);
 
-        return $products;
+       return response()->json($products);
     }
 }

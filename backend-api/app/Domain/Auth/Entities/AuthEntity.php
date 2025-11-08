@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Users\Entities;
+namespace App\Domain\Auth\Entities;
 
 use App\Domain\User\Entities\UserEntity;
 

@@ -4,7 +4,7 @@ namespace App\Infrastructure\Persistence\Auth;
 
 use App\Domain\Auth\Repositories\AuthRepositoryInterface;
 use App\Domain\User\Entities\UserEntity;
-use App\Domain\Users\Entities\AuthEntity;
+use App\Domain\Auth\Entities\AuthEntity;
 use App\Infrastructure\Shared\BaseRepository;
 use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Facades\JWTAuth;

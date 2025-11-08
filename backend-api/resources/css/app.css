@@ -1,3 +1,12 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+a{
+    color: unset !important;
+    text-decoration: none !important;
+}
+
+a:hover{
+    opacity: 0.7;
+}

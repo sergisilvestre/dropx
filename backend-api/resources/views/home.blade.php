@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Laravel + Vue 3</title>
-    @vite('resources/js/app.js')
+    <title>{{ config('app.name') }}</title>
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
     @csrf
 </head>
 

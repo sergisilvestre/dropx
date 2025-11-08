@@ -1,19 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-// Authentication views
-import auth from '@/router/auth.js'
-
-// Guest views
-import guest from '@/router/guest.js'
-
-// User views
-import user from '@/router/user/user.js'
-
-// Not found page
+import guest from '@/router/guest/index.js'
+import user from '@/router/user/index.js'
 import NotFound from '@/ui/views/NotFound.vue'
 
 const routes = [
-  ...auth,
   ...guest,
   ...user,
   {

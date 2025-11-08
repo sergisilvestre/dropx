@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\Roles\RolesController;
+use App\Http\Controllers\Role\RoleController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['prefix' => 'roles'], function () {
+Route::group(['prefix' => 'role'], function () {
 
-    Route::apiResource('roles',     RolesController::class);
+    Route::apiResource('role',     RoleController::class);
 
     Route::prefix('user/{user}')->group(function () {
 
