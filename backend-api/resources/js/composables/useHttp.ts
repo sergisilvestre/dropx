@@ -1,11 +1,12 @@
 // composables/useHttp.ts
 export function useHttp() {
   /**
-   * Realiza una solicitud HTTP genérica
-   * @param url La ruta del endpoint
-   * @param method Método HTTP: GET, POST, PUT, DELETE
-   * @param body Datos opcionales para el body
-   * @param headers Headers opcionales
+   * 
+   * @param url 
+   * @param method 
+   * @param body 
+   * @param headers 
+   * @returns 
    */
   async function httpRequest<T>(
     url: string,
